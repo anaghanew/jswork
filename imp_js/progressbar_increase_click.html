@@ -1,0 +1,34 @@
+<html>
+<head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        #meter {border:1px solid #000;width:500px}
+        #progress {background:yellow;height:20px;width:0%}
+    </style>
+</head>
+<body>
+<button onclick="increase()">Next</button>
+<button onclick="decrease()">Previous</button>
+<input type="text" id="tb">
+<div id='meter'><div id='progress'></div> </div>
+<script>
+    var value = 0,
+            tb = document.getElementById("tb"),
+            progress = document.getElementById("progress");
+    function increase(){
+        value = value + 20;
+        if(value>=100) value = 100;
+        tb.value = value;
+        progress.style.width = value + "%";
+    }
+    function decrease(){
+        value = value - 20;
+        if(value<=0) value = 0;
+        tb.value = value;
+        progress.style.width = value + "%";
+    }
+</script>
+
+</body>
+</html>

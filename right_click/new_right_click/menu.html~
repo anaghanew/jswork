@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>right click menu</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            try {
+                $(document).bind("contextmenu", function(e) {
+                    e.preventDefault();
+                    $("#custom-menu").css({ top: e.pageY + "px", left: e.pageX + "px" }).show(50);
+                });
+                $(document).click(function(e) {
+                    var container = $("#custom-menu");
+                    if (container.has(e.target).length == 0) {
+                        container.hide();
+                    }
+                });
+            }
+            catch (err) {
+                alert(err);
+            }
+        });
+    </script>
+
+</head>
+<body>
+
+<div id="custom-menu">
+    <ol>
+        <li><a href="#">I did not get this</a> </li>
+        <li><a href="#">This image does not help</a> </li>
+        <li><a href="#">I need a better explanation </a> </li>
+        <li><a href="#">This is very confusing</a> </li>
+    </ol>
+</div>
+</body>
+</html>

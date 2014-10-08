@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Left panel</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+
+ </head>
+<body>
+<div id="accordian">
+    <ol>
+        <li><div class="slide  fa-tasks"></div>
+            <ul>
+                <li class="a1"><div class="slide1"></div></li>
+                <li class="a1"><div class="slide1"></div></li>
+            </ul>
+        </li>
+        <li><div class="slide  fa-tasks"></div>
+            <ul>
+                <li class="a1"><div class="slide1"></div></li>
+                <li class="a1"><div class="slide1"></div></li>
+            </ul>
+        </li>
+
+    </ol>
+</div>
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#accordian .slide").click(function() {
+            $("#accordian ol ul").slideUp();
+            if(!$(this).next().is(":visible")) {
+                $(this).next().slideDown();
+            }
+        })
+    })
+</script>
+</body>
+</html>

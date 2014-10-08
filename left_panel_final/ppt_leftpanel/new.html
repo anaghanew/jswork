@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link href="CSS/Styles.css" rel="stylesheet"/>
+    <script src="CSS/jquery.js"></script>
+    <script>
+        /*$(document).ready(function(){
+         $('li > div').click(function(){
+         $(this).next().slideToggle("slow");
+         });
+         });
+         */
+        $(document).ready(function () {
+
+            $("#Slide1").click(function () {
+                $("#subslide2").slideUp('slow', function () {
+                    $("#subslide1").slideToggle("slow");
+                    $("#Slide1").addClass("activated");
+                    $("#Slide2").removeClass("activated");
+                });
+            });
+
+            $("#Slide2").click(function () {
+                $("#subslide1").slideUp('slow', function () {
+                    $("#subslide2").slideToggle("slow");
+                    $("#Slide2").addClass("activated");
+                    $("#Slide1").removeClass("activated");
+                });
+            });
+
+            $(".sub_Slide").click(function () {
+                $('ul').find('li').children().removeClass('sub_Slide1l sub-activated').addClass('sub_Slide');
+                $(this).addClass('sub-activated sub_Slide1').removeClass('sub_Slide');
+            });
+        });
+
+
+    </script>
+<body>
+<div class="Left_Panel">
+    <ol class="slides">
+        <li>
+            <div id="Slide1" class="slide"></div>
+            <ul id="subslide1">
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div id="Slide2" class="slide"></div>
+            <ul id="subslide2">
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+</body>
+</html>

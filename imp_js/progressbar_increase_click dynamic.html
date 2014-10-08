@@ -1,0 +1,33 @@
+<html>
+<head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        #meter {border:1px solid #000;width:500px}
+        #progress {background:yellow;height:20px;width:100%}
+    </style>
+</head>
+<body>
+<!--<button onclick="increase()">Next</button>-->
+<button onclick="decrease()">Previous</button>
+<input type="text" id="tb">
+<div id='meter'><div id='progress'></div> </div>
+<div class="value_display" style="height: 100px;border: 1px solid #000000"></div>
+<script>
+    var value = 100,
+    tb = document.getElementById("tb"),
+    progress = document.getElementById("progress");
+    function decrease()
+    {
+        var $value1;
+        $value1=$("#tb").val();
+        value = value - $value1;
+        console.log(value);
+        if(value<=0);
+        $('.value_display').text(value  + '% health left');
+        progress.style.width = value + "%";
+        
+    }
+</script>
+</body>
+</html>

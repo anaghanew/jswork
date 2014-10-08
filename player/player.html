@@ -1,0 +1,412 @@
+<html>
+<head>
+    <title>player</title>
+    <link rel="stylesheet" href="http://i.icomoon.io/public/5fe00c7597/hieroDex/style.css">
+    <style>
+
+        body {
+            background-color: black;
+        }
+
+        .player-wrapper {
+            height: 480px;
+            margin: 7% auto;
+            width: 840px;
+        }
+
+        .play-area {
+            height: 436px;
+            width: 640px;
+            position: relative;
+            background-image: url(player-background.png);
+
+        }
+
+        .player-right-panel {
+            width: 150px;
+            height: 100%;
+            background-color: black;
+        }
+
+        .player-footer {
+            background-color: #000000;
+            border: 1px solid #FFD700;
+            height: 40px;
+            width: 640px;
+            margin-top: 2px;
+        }
+
+        .play-input {
+            float: left;
+            height: 40px;
+            width: 480px;
+        }
+
+        .player-buttons {
+            float: left;
+            height: 40px;
+            margin-left: 13px;
+            width: 143px;;
+        }
+
+        .prev-button {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 24px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .next-button {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            height: 24px;
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+
+        .sount-icon {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            border: none;
+            border-radius: 5px;
+        }
+
+        .input-play-back {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            border-radius: 5px;
+            height: 27px;
+            margin-left: 50px;
+            margin-top: 7px;
+            width: 431px;;
+
+        }
+
+        .white {
+            color: white;
+            cursor: pointer;
+        }
+
+        .volume-icon {
+            float: left;
+            margin-left: 2px;
+            margin-top: 8px;
+            width: 25px;
+        }
+
+        .volume-button {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            height: 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 4px;
+
+        }
+
+        .play-icon {
+            margin-left: 13px;
+
+        }
+
+        .replay-icon {
+            margin-left: 11px;
+        }
+
+        .input-design {
+            background-color: #F4F454;
+            border: medium none;
+            border-radius: 5px;
+            height: 18px;
+            margin-top: 4px;
+            width: 81%;
+        }
+
+        .close-button {
+            float: right;
+            margin-right: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .play-circle-button {
+            cursor: pointer;
+            font-size: 4em;
+            height: 50px;
+            left: 46%;
+            position: absolute;
+            top: 45%;
+        }
+
+        .player-right-container{
+            float: right;
+        }
+        .player-left-container{
+            width:195px;
+            height:480px;
+            background-color: gray;
+            float: left;
+            border-bottom-left-radius: 5px;
+        }
+        .player-header{
+            height:60px;
+            width: 195px;
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+        }
+        .player-hierodex-logo{
+            width:100%;
+            margin-top: 5px;
+        }
+    .player-tab-container{
+        height: 416px;
+        margin-top: -12px;
+        width: 195px;
+    }
+
+        .tabs {
+            list-style: none;
+            position: relative;
+        }
+
+        .tabs li {
+            float: left;
+            display: block;
+        }
+
+        .tabs input[type="radio"] {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .tabs label {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0);
+            border-radius: 2px 2px 0 0;
+            cursor: pointer;
+            display: block;
+            font-size: 13px;
+            font-weight: normal;
+            padding: 5px 8px;
+            position: relative;
+            text-transform: uppercase;
+            transition: all 0.2s ease-in-out 0s;
+        }
+
+        .tabs label:hover {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0);
+        }
+
+        .tabs .tab-content {
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+            display: none;
+            font-size: 17px;
+            height: 300px;
+            left: 5px;
+            line-height: 25px;
+            overflow: hidden;
+            padding: 25px;
+            position: absolute;
+            width: 136px;
+            z-index: 2;
+        }
+
+        .tabs [id^="tab"]:checked + label {
+            top: 0;
+            padding-top: 5px;
+            background: #303030; /* Old browsers */
+            background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0);
+            color:white;
+        }
+
+        .tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+            display: block;
+        }
+    .footer-search-box{
+        background: #303030; /* Old browsers */
+        background: -moz-linear-gradient(top, #303030 0%, #171717 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303030), color-stop(100%, #171717)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #303030 0%, #171717 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #303030 0%, #171717 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #303030 0%, #171717 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #303030 0%, #171717 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030', endColorstr='#171717', GradientType=0); /* IE6-9 */
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 50px;
+        /*margin: 0 auto;*/
+        margin-left: 5px;
+        position: relative;
+        top: 87%;
+        width: 186px;
+    }
+    .footer-search-box input{
+        background-color: #FF0000;
+        border: medium none;
+        height: 20px;
+        width: 178px;
+        background-color: #F4F454;
+        border-radius: 5px;
+        margin-left: 4px;
+    }
+    .tab-buttons-1{
+        margin-left:-35px;
+    }
+    .play-area-overlay{
+        background-color: #FFFF00;
+        height: 438px;
+        opacity: 0.5;
+        position: absolute;
+        top: 14%;
+        width: 640px;
+    }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="player-wrapper">
+    <div class="player-left-container">
+           <div class="player-header">
+               <img src="hierodex-logo-2.png" class="player-hierodex-logo">
+           </div>
+        <div class="player-tab-container">
+            <ul class="tabs">
+                <li class="tab-buttons-1">
+                    <input type="radio" name="tabs" id="tab1" checked/>
+                    <label for="tab1">Menu</label>
+                    <div id="tab-content1" class="tab-content">
+                        am tab 1
+                    </div>
+                </li>
+                <li class="tab-buttons-2">
+                    <input type="radio" name="tabs" id="tab2"/>
+                    <label for="tab2">Notes</label>
+                    <div id="tab-content2" class="tab-content">
+                        am tab 2
+                    </div>
+                </li>
+            </ul>
+
+            <div class="footer-search-box">
+                <input class="" name="lastname" placeholder="Search..">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="player-right-container">
+        <div class="play-area">
+            <div class="close-button">
+                <i class="icon hiero-close ico-moon-icon-1em"></i>
+            </div>
+            <div class="play-circle-button">
+                <i class="icon hiero-play-circle ico-moon-icon-1em white"></i>
+            </div>
+        </div>
+        <div class="player-footer">
+            <div class="play-input">
+                <div class="volume-icon">
+                    <button type="button" class="volume-button">
+                        <i class="icon hiero-volume-high ico-moon-icon-1em white"></i>
+                    </button>
+                </div>
+
+                <div class="input-play-back">
+                    <i class="icon hiero-play ico-moon-icon-1em white play-icon"></i>
+                    <input class="input-design" name="lastname">
+                    <i class="icon hiero-replay ico-moon-icon-1em white replay-icon"></i>
+                </div>
+            </div>
+            <div class="player-buttons">
+                <div style="margin-top:8px;">
+                    <button type="button" class="prev-button">&#60; PREV</button>
+                    <button type="button" class="next-button">NEXT &#62;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="play-area-overlay"></div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

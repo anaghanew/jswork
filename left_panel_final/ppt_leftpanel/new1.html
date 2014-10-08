@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <link href="CSS/Styles.css" rel="stylesheet"/>
+    <script src="CSS/jquery.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <!--<link rel="stylesheet" href="http:/resources/demos/style.css">
+-->
+   <!--<script src="http//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>-->
+    <!--<link rel="stylesheet" href="http:/resources/demos/style.css">-->
+    <script>
+
+        $(document).ready(function () {
+            $('.slide').click(function () {
+                //console.log($('.slides').find('.sub_lists').find('li').length);
+                $('.slides').find('.sub_lists').hide();
+                //$('.slides').find('.sub_lists').find('li').hide();
+                $(this).next().slideToggle("slow");
+            });
+
+
+
+            $(".sub_Slide").click(function () {
+                $('ul').find('li').children().removeClass('sub_Slide1 sub-activated').addClass('sub_Slide');
+                $(this).addClass('sub-activated sub_Slide1').removeClass('sub_Slide');
+            });
+        });
+
+        $(document).ready(function(){
+
+            $( ".slides" ).sortable({
+                change: function(event, ui) {
+                    var pos = ui.helper.index() < ui.placeholder.index()
+                            ? { start: ui.helper.index(), end: ui.placeholder.index() }
+                            : { start: ui.placeholder.index(), end: ui.helper.index() }
+
+                    $(this)
+                            .children().removeClass( 'highlight' )
+                            .not( ui.helper ).slice( pos.start, pos.end ).addClass( 'highlight' );
+                },
+                stop: function(event, ui) {
+                    $(this).children().removeClass( 'highlight' );
+                }
+            });
+
+
+
+        });
+        /*   $(document).ready(function () {
+
+         $("#Slide1").click(function () {
+         $("#subslide2").slideUp('slow', function () {
+         $("#subslide1").slideToggle("slow");
+         $("#Slide1").addClass("activated");
+         $("#Slide2").removeClass("activated");
+         });
+         });
+
+         $("#Slide2").click(function () {
+         $("#subslide1").slideUp('slow', function () {
+         $("#subslide2").slideToggle("slow");
+         $("#Slide2").addClass("activated");
+         $("#Slide1").removeClass("activated");
+         });
+         });
+
+         $(".sub_Slide").click(function () {
+         $('ul').find('li').children().removeClass('sub_Slide1 sub-activated').addClass('sub_Slide');
+         $(this).addClass('sub-activated sub_Slide1').removeClass('sub_Slide');
+         });
+         });
+         */
+
+    </script>
+<body>
+<div class="Left_Panel">
+    <ol class="slides ">
+            <li>
+                <div id="Slide1" class="slide">1</div>
+                <ul id="subslide1" class="sub_lists">
+                    <li>
+                        <div class="sub_Slide"></div>
+                    </li>
+                    <li>
+                        <div class="sub_Slide"></div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div id="Slide2" class="slide">2</div>
+                <ul id="subslide2" class="sub_lists">
+                    <li>
+                        <div class="sub_Slide"></div>
+                    </li>
+                    <li>
+                        <div class="sub_Slide"></div>
+                    </li>
+                </ul>
+            </li>
+        <li>
+            <div id="Slide3" class="slide">3</div>
+            <ul id="subslide2" class="sub_lists">
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div id="Slide4" class="slide">4</div>
+            <ul id="subslide2" class="sub_lists">
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+                <li>
+                    <div class="sub_Slide"></div>
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+</body>
+</html>

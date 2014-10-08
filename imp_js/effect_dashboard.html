@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="jquery.js"></script>
+    <style>
+        .tile {
+            width: 48px;
+            height: 48px;
+            margin: 0px;
+            padding: 0px;
+            float: left;
+            background-color:#D9D9D9;
+            border: 1px solid black;
+        }
+         .visted
+        {
+            background-color: #6BC1E3;
+
+        }
+        .current
+        {
+            background-color: #Ff9223;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="tile" onclick="myFunction(this)" ></div>
+
+<div class="tile" onclick="myFunction(this)" ></div>
+<div class="tile" onclick="myFunction(this)"></div>
+
+
+<script>
+    function myFunction(divObj) {
+
+        elements = document.getElementsByClassName("tile");
+
+        for (var i = 0; i < elements.length; i++) {
+
+            elements[i].classList.remove("current");
+
+
+        }
+        //        document.getElementsByClassName("title").style.background="red";
+        divObj.className += ' current';
+        divObj.className += ' visted';
+    }
+
+</script>
+
+</body>
+
+</html>

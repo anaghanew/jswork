@@ -1,0 +1,27 @@
+.box{
+    width:250px;
+    height: 180px;
+    position:relative;
+    float: left;
+    margin:2px;
+}
+.box:Hover{
+    background-color: #fce7df;
+}
+img{
+    width: 230px;
+    height: 120px;
+    top:10px;
+    position: relative;
+    left:10px;
+
+}
+.div_text{
+    font-size: 12px;
+    font-family: calibri;
+    top:10px;
+    left:10px;
+    position: relative;
+
+}
+
