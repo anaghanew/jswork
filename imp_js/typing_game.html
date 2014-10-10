@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+    body
+    {
+        overflow: hidden;
+    }
+    </style>
+ </head>
+<body>
+<div class="inner"></div>
+<button id="btn">Start Button</button>
+<div class="score_box" style="top:0px;right:0%;position:fixed;background-color:#000000;width:200px;height:50px;color:white;"></div>
+</body>
+<script>
+(function makeDiv(){
+    var divsize =50;
+    var k = Math.floor(Math.random() * ( 90 - 65 ) + 65);
+    var ch = String.fromCharCode(k);
+    var color = '#'+ Math.round(0xffffff * Math.random()).toString(16);
+    $newdiv = $('<div style="text-align:center;padding:5px 0;font-size: 20px;color: white" class="bubb">'+ ch +'</div>').css({
+        'width':divsize+'px',
+        'height':divsize+'px',
+        'background-color': color
+    });
+    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+    $newdiv.css({
+        'position':'absolute',
+        'left':posx+'px',
+        'top':posy+'px',
+        'display':'none'
+    }).appendTo( 'body' ).fadeIn(500).delay(700).fadeOut(900, function(){
+        $(this).remove();
+        makeDiv();
+    });
+})();
+$(document).ready( function(event){
+var score=0;
+    $(document).keydown( function(event)
+{
+    var keycode = event.keyCode;
+    var ch1 = String.fromCharCode(keycode);
+    console.log(ch1);
+    var a2=$(".bubb").text();
+    console.log(a2);
+    if(ch1===a2)
+    {
+        score = score + 1;
+        $( ".score_box" ).empty().append( "<div>The score is</div>"+ score);
+    }else
+    {
+        score = score - 1;
+        $( ".score_box" ).empty().append(score);
+    }
+});
+});
+</script>
+</html>

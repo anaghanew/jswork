@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .div_box {
+            width: 100px;
+            height: 30px;
+            background-color: grey;
+        }
+        .div_slide
+        {
+            width: 250px;
+            border: 1px solid grey ;
+        }
+    </style>
+</head>
+<body>
+<div class="div_box">click here</div>
+<div class="div_slide">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+    type specimen book.
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".div_box").click(function ()
+        {
+            $(".div_slide").slideToggle();
+        });
+    });
+</script>
+
+</html>

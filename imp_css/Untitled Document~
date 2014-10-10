@@ -1,0 +1,10 @@
+dropshadow css link
+http://css3gen.com/box-shadow/
+
+for outline on a tags
+a:hover, a:active, a:focus {
+  // styling for any way a link is about to be used
+}
+
+div css to textbox 
+input[type=text]
