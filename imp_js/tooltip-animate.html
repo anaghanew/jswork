@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+    .first-div
+    {
+        width: 25px; height: 25px;
+        padding: 25px;
+        background: red;
+        color: #fff;
+        position: absolute;
+        top: 50px; left: 100px;
+    }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+        <script>
+            $(function() {
+                var $square = $(".first-div"),flag = 1;
+                var timer;
+                bounce();
+                function bounce() {
+                    timer = setInterval(function() {
+                        if(flag ==1) {
+                            flag = -1;
+                        } else {
+                            flag = 1;
+                        }
+                        $square.animate({ top: "+="+(flag*10)}, 300)
+                    },300);
+                }
+            });
+        </script>
+</head>
+<body>
+<div class="first-div">
+   Moving arrow
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .letter-block
+        {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: static;
+            display: block;
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="answer-block"></div>
+
+</body>
+<script>
+//    function myFunction(ch1) {
+//        var str = "Hello World!";
+//        var n = str.length;
+//
+//        for(var i=0;i<n;i++)
+//        {
+//            $(".answer-block").append('<div class="letter-block"></div>');
+//
+//        }
+//        compare(str);
+//
+//        console.log(n);
+//        console.log("a1"+ ch1);
+//    }
+
+    function compare(str,ch1)
+    {
+        console.log(str.length);
+        for(var i=0;i<str.length;i++)
+        {
+         if(str[i]== ch1)
+         {
+
+             console.log('hi'+str[i]);
+             console.log(str);
+             console.log("correct");
+         }
+            else
+         {
+             console.log("wrong");
+         }
+
+        }
+
+    }
+
+    $(document).keydown( function(event) {
+        var str = "Hello World!";
+        var n = str.length;
+
+        var keycode = event.keyCode;
+        var ch1 = String.fromCharCode(keycode);
+
+        compare(str,ch1);
+    });
+</script>
+</html>

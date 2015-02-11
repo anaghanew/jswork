@@ -1,0 +1,13 @@
+'mouseenter .componentSize-thumbnail-container':(e)->
+
+      width=parseInt($(e.currentTarget).attr('x-cord'))
+      height=parseInt($(e.currentTarget).attr('y-cord'))
+      $(".input-style").val width
+      $(".input-style-try").val height
+      $(".componentSize-thumbnail-container").removeClass("componentSize-active").addClass('componentSize-deactive')
+      $(".componentSize-thumbnail-container").each (index,e) ->
+        curr_width=$(e).attr('x-cord')
+        curr_height=$(e).attr('y-cord')
+        if curr_width <= width && curr_height <= height
+          $(e).removeClass("componentSize-deactive").addClass('componentSize-active')
+

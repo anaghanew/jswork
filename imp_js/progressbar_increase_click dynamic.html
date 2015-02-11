@@ -14,14 +14,14 @@
 <div id='meter'><div id='progress'></div> </div>
 <div class="value_display" style="height: 100px;border: 1px solid #000000"></div>
 <script>
-    var value = 100,
-    tb = document.getElementById("tb"),
-    progress = document.getElementById("progress");
+    var value = 100;
+    var tb = document.getElementById("tb");
+    var progress = document.getElementById("progress");
     function decrease()
     {
         var $value1;
         $value1=$("#tb").val();
-        value = value - $value1;
+        var value = value - $value1;
         console.log(value);
         if(value<=0);
         $('.value_display').text(value  + '% health left');
